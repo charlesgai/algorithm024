@@ -117,7 +117,7 @@ public List<List<Integer>> levelOrder(Node root) {
 
 有向图，无向图。图的权值表示。
 
-注意：**图遍历时需要用 visited 保存节点是否访问，因为，图中可以存着环**。
+注意：**图遍历时需要用 visited 保存节点是否访问，因为，图中可以存在环**。
 
 ## 算法实战总结
 
