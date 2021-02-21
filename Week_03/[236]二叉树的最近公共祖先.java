@@ -64,18 +64,18 @@ class Solution {
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
 
-        TreeNode ressult = null;
+        TreeNode result = null;
         // 左子树为空，公共祖先在右子树
         if(left == null) {
-            ressult = right;
+            result = right;
         // 右子树为空，公共祖先在左子树
         } else if(right == null) {
-            ressult = left;
+            result = left;
         } else {
-            ressult = root;
+            result = root;
         }
 
-        return ressult;
+        return result;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
