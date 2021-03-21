@@ -24,22 +24,21 @@ public int doubleBfs(String beginWord, String endWord, List<String> wordList) {
     Set<String> endVisited = new HashSet<>();
     endVisited.add(endWord);
 
-    // 3) 双向 BFS，左右交替扩散
+    // 双向 BFS，左右交替扩散
     while (!startVisited.isEmpty() && !endVisited.isEmpty()) {
-        // 优先选择代价较小者进行搜索（一直保持 start 最小）
+        // 2）优先选择代价较小者进行搜索（一直保持 start 最小）
         if (startVisited.size() > endVisited.size()) {
             Set<String> temp = startVisited;
             startVisited = endVisited;
             endVisited = temp;
         }
-
         
-        // 做搜索的逻辑，此时更新 startVisited 集合(更新代价最小集合)
+        // 3）做搜索的逻辑，此时更新 startVisited 集合(更新代价最小集合)
         doSomething();
                 
     }
 
-    // 返回最终结果
+    // 4）返回最终结果
     return result;
 }
 ```
