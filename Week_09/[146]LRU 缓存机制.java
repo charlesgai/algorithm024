@@ -101,7 +101,7 @@ class LRUCache {
             return -1;
         }
 
-        // key 存在，最近使用，需要移动到头部
+        // key 存在，最近使用，需要移动到尾部
         moveToTail(cacheNode);
 
         return cacheNode.value;
@@ -110,11 +110,12 @@ class LRUCache {
     public void put(int key, int value) {
         CacheNode cacheNode = cache.get(key);
 
-        // 缓存没有
+        // 缓存没有，创建缓存节点，并且考虑缓存容量
         if(cacheNode == null) {
             CacheNode newCache = new CacheNode(key, value);
             cache.put(key, newCache);
 
+            // 添加到尾部
             addToTail(newCache);
             size ++;
             // 超过缓存容量，需要淘汰头部节点
